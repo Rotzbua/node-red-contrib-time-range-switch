@@ -52,21 +52,25 @@ THE SOFTWARE.
         inputs: 1,
         outputs: 2,
         outputLabels: function(index) {
-            if (index === 0) return "within";
-            if (index === 1) return "outside";
+            if(index === 0) return 'within';
+            if(index === 1) return 'outside';
+            return 'error';
         },
         icon: 'switch.png',
-        label: function () {
+        label: function() {
             return this.name || this.startTime + ' - ' + this.endTime;
         },
         paletteLabel: 'time range',
         align: 'left',
-        oneditprepare: function () {
-            if (!$("#node-input-lat").val().trim() && !$("#node-input-lon").val().trim()) {
-                if ('geolocation' in navigator) {
-                    navigator.geolocation.getCurrentPosition(function (position) {
-                        $("#node-input-lat").val(Number(position.coords.latitude.toFixed(5)));
-                        $("#node-input-lon").val(Number(position.coords.longitude.toFixed(5)));
+        oneditprepare: function() {
+            const lat = document.getElementById('node-input-lat') ;
+            const lon = document.getElementById('node-input-lon');
+            
+            if(lat && lon && !lat.value.trim() && !lon.value.trim()) {
+                if('geolocation' in navigator) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        lat.value = Number(position.coords.latitude.toFixed(5));
+                        lon.value = Number(position.coords.longitude.toFixed(5));
                     });
                 }
             }

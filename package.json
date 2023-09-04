@@ -18,13 +18,17 @@
     },
     "author": "@biddster",
     "license": "MIT",
+    "engines": {
+        "node": ">=18.0.0"
+    },
     "dependencies": {
         "lodash": "^4.17.21",
-        "moment": "^2.29.1",
+        "moment": "^2.29.4",
         "moment-range": "^4.0.2",
         "suncalc2": "^1.8.1"
     },
     "node-red": {
+        "version": ">=3.0.0",
         "nodes": {
             "time-range-switch": "index.js"
         }
@@ -37,19 +41,18 @@
         "url": "https://github.com/biddster/node-red-contrib-time-range-switch/issues"
     },
     "devDependencies": {
-        "@hapi/eslint-config-hapi": "13.0.2",
-        "@hapi/eslint-plugin-hapi": "4.3.6",
-        "babel-eslint": "10.1.0",
-        "eslint": "^8.11.0",
-        "husky": "^7.0.4",
-        "lint-staged": "^12.3.7",
-        "mocha": "^9.2.2",
-        "node-red": "^2.2.2",
+        "@hapi/eslint-plugin": "^6.0.0",
+        "@babel/eslint-parser": "^7.22.15",
+        "eslint": "^8.50.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^14.0.1",
+        "mocha": "^10.2.0",
+        "node-red": "^3.1.0",
         "node-red-contrib-mock-node": "^0.5.3",
-        "npm-check-updates": "^12.5.4",
+        "npm-check-updates": "^16.14.4",
         "nyc": "^15.1.0",
-        "prettier": "^2.6.0",
-        "release-it": "^14.14.3"
+        "prettier": "^3.0.3",
+        "release-it": "^16.2.0"
     },
     "husky": {
         "hooks": {
@@ -60,7 +63,7 @@
         "extends": "@hapi/eslint-config-hapi",
         "parser": "babel-eslint",
         "parserOptions": {
-            "ecmaVersion": 2020,
+            "ecmaVersion": 2022,
             "sourceType": "script"
         },
         "overrides": [

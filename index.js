@@ -65,7 +65,7 @@ module.exports = function (RED) {
                 // Schedex#57 Nadir appears to work differently to other sun times
                 // in that it will calculate tomorrow's nadir if the time is
                 // too close to today's nadir. So we just take the time and
-                // apply that to the event's moment. That's doesn't yield a
+                // apply that to the event's moment. That doesn't yield a
                 // perfect suntime but it's close enough.
                 return now
                     .clone()
